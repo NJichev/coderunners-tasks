@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
-  resources :items
-  root 'items#index'
+  resources :products
+  root 'products#index'
 end
