@@ -1,0 +1,12 @@
+<%= form_for @product do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name, class: 'form_control'%><br/>
+
+  <%= f.label :description %>:
+  <%= f.text_field :description, class: 'form_control'%><br/>
+
+  <%= f.label :current_bid %>:
+  <%= f.text_field :current_bid, class: 'form_control'%><br/>
+
+  <%= f.submit "Create", class: "btn btn-primary"%>
+<% end %>

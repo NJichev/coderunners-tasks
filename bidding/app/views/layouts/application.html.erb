@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="main-container" class="container-fluid">
+    <div class="row">
+      <div id="sidebar" class="col-xs-0 center-block">
+        <!-- sidebar content -->
+        <nav class="navbar navbar-default" role="navigation">
+          <span> <a class="navbar-brand" href='http://localhost:3000/login'>Login</a> </span>
+          <span> <a class="navbar-brand" href='http://localhost:3000/products'>Products</a> </span>
+          <span> <a class="navbar-brand" href='http://localhost:3000/register'>Register</a> <span>
+        </nav>
+      </div>
+        <div id="content" class="col-xs-8">
+        <!-- main content -->
+        <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

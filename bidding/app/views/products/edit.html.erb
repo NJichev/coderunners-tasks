@@ -1,0 +1,11 @@
+<%if flash[:notice]%>
+	<p><%= flash[:notice]%></p>
+<%end%>
+
+<%= form_for @product do |f| %>
+
+  <%= f.label "Enter bid: " %>
+  <%= f.text_field :current_bid, class: 'form_control' %><br/>
+
+  <%= f.submit "Make bid.", class: "btn btn-primary" %>
+<% end %>

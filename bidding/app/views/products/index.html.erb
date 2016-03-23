@@ -1,0 +1,10 @@
+<% @products.each do |product| %>
+  <a href="/products/<%= product.id %>">
+  <div id="wrapper">
+    <section>
+      <%= render partial: "product", locals: { product: product } %>
+    </section><br>
+  </div>
+  <br>
+  </a>
+<% end %>

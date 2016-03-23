@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email])
     if @user&&@user.authenticate(params[:session][:password])
       log_in @user
-      params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
+      # params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
       render 'users/log_in'
     else
       render :new

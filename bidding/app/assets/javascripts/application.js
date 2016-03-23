@@ -15,3 +15,21 @@
 //= require turbolinks
 //= bootstrap-sprockets
 //= require_tree .
+
+
+$(function() {
+  setInterval(function() {
+    $.ajax({
+      url: '/products.json',
+      type: 'GET',
+      success: function(data) {
+        $.each(data, function(id, value) {
+          item = data[id];
+          $('.item-'+item.id).find('.bid-price').text(item.current_bid);
+          $('.item-'+item.id).find('.bidder').text(item.users_id);
+          console.log(value);
+        });
+      }
+    });
+  }, 500);
+});

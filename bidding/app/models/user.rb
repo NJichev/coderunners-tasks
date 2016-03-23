@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   has_many :products
   has_secure_password
 
+  def fullname
+    "#{first_name} #{last_name}"
+  end
+
   # Returns the hash digest of the given string.
   def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
