@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  layout :user_layout
+
   def index
     @products = Product.all
 
@@ -6,7 +8,6 @@ class ProductsController < ApplicationController
       format.html { @products }
       format.json { render json: @products }
     end
-    
   end
 
   def new
@@ -65,5 +66,9 @@ class ProductsController < ApplicationController
     params.require(:product)
           .permit(:name, :description,
                   :current_bid)
+  end
+
+  def user_layout
+    logged_in? ? 'user' : 'application'
   end
 end

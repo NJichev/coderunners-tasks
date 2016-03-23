@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bidding</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="main-container" class="container-fluid">
+    <div class="row">
+      <div id="sidebar" class="col-xs-0 center-block">
+        <!-- sidebar content -->
+        <nav class="navbar navbar-default" role="navigation">
+          <span> <a class="navbar-brand" href='#'><%= current_user.fullname %></span>
+          <span> <a class="navbar-brand" href='http://localhost:3000/products'>Products</a> </span>
+        </nav>
+      </div>
+        <div id="content" class="col-xs-8">
+        <!-- main content -->
+        <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
