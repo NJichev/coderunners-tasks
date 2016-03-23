@@ -26,7 +26,7 @@ $(function() {
         $.each(data, function(id, value) {
           item = data[id];
           $('.item-'+item.id).find('.bid-price').text(item.current_bid);
-          $('.item-'+item.id).find('.bidder').text(item.users_id);
+          $('.item-'+item.id).find('.bidder').text(item.bidder_name);
           console.log(value);
         });
       }

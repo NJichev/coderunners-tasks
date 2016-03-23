@@ -34,10 +34,11 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.users_id == current_user.id
-        flash[:notice] = 'You cannot bid, since you are already in the lead.'
-        render :edit
-      else
+      flash[:notice] = 'You cannot bid, since you are already in the lead.'
+      render :edit
+    else
       @product.users_id = current_user.id
+      @product.bidder_name = current_user.fullname
 
       if @product.update_bid(bid_params)
         if @product.save

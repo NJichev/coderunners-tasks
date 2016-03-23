@@ -4,8 +4,8 @@
 <% if logged_in? %>
   <span><a href=<%= "/products/#{product.id}/edit" %> class="btn btn-primary pull-right">Bid</a></span>
 <% end %>
-<% if product.users_id %>
-  Latest bid made by user with id:<span class="bidder"><%= User.find_by(id: product.users_id).id %></span>
+<% if product.users_id && product.bidder_name %>
+  Latest bid made by: <span class="bidder"><%= product.bidder_name %></span>
 <% end %>
 <span class="btn btn-primary pull-right bid-price"><%=product.current_bid%></span>
 <h3>Description: <small><%= product.description %></small><h3>
